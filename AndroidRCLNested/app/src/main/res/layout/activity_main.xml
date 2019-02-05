@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/christmas"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_background_gradient"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </FrameLayout>
+
+    <edmt.dev.advancednestedscrollview.AdvancedNestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.example.shakil.androidrclnested.Behavior.CustomBehavior">
+
+        <FrameLayout
+            android:id="@+id/card_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:descendantFocusability="blocksDescendants">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/card_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingLeft="24dp"
+                        android:paddingTop="16dp"
+                        android:paddingRight="24dp"
+                        android:paddingBottom="4dp"
+                        android:text="Christmas"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                    <TextView
+                        android:id="@+id/card_sub_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingLeft="24dp"
+                        android:paddingTop="16dp"
+                        android:paddingRight="24dp"
+                        android:paddingBottom="8dp"
+                        android:text="Best 5 Christmas trees around the world"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <edmt.dev.advancednestedscrollview.MaxHeightRecyclerView
+                            android:id="@+id/card_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:id="@+id/card_header_shadow"
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:alpha="0"
+                            android:background="@drawable/toolbar_shadow" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_marginRight="24dp"
+                android:src="@drawable/ic_share_white_24dp" />
+
+        </FrameLayout>
+
+    </edmt.dev.advancednestedscrollview.AdvancedNestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
